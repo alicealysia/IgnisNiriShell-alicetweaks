@@ -1,82 +1,29 @@
 using Gtk 4.0;
 
 template $TopbarView: CenterBox {
+    styles [
+        "bar-bg",
+        "rounded",
+        "mt-2",
+        "mx-2",
+        "unset"
+    ]
+
     [start]
     Box {
-        styles [
-            "bar-bg",
-            "rounded-tr",
-            "rounded-br",
-        ]
-
-        $CommandPill {
-            icon-name: "view-app-grid-symbolic";
-            click-command: "ignis toggle-window ignis-applauncher";
-
-            styles [
-                "hover",
-                "px-2",
-                "rounded-tr",
-                "rounded-br",
-                "unset",
-            ]
-        }
-
         $NiriWorkspaces {}
     }
 
     [center]
     Box {
-        styles [
-            "bar-bg",
-            "rounded",
-        ]
-
-        $NiriActiveWindow {}
+        $IgnisClock {}
     }
 
     [end]
     Box {
-        styles [
-            "bar-bg",
-            "rounded-tl",
-            "rounded-bl",
-        ]
-
         $IgnisTray {}
 
         $IgnisFcitxIndicator {}
-
-        $CpuUsagePill {
-            tooltip-text: "CPU Usage";
-            interval: 3000;
-            labeler: cpu_label;
-
-            styles [
-                "hover",
-                "rounded",
-                "px-1",
-                "unset",
-            ]
-
-            Box {
-                Image {
-                    icon-name: "application-x-firmware-symbolic";
-
-                    styles [
-                        "px-1",
-                    ]
-                }
-
-                Label cpu_label {
-                    label: "0";
-
-                    styles [
-                        "px-1",
-                    ]
-                }
-            }
-        }
 
         $IgnisCaffeineIndicator {}
 
@@ -87,8 +34,6 @@ template $TopbarView: CenterBox {
         $IgnisAudio {}
 
         $IgnisNetwork {}
-
-        $IgnisClock {}
 
         $IgnisBatteries {}
     }

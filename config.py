@@ -41,7 +41,3 @@ for idx in range(get_n_monitors()):
     Topbar(idx)
     AppDock(idx)
     OverlayBackdrop(idx)
-
-    WallpaperWindow(idx)
-    if niri.is_available:
-        WallpaperWindow(idx, is_backdrop=True)

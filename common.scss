@@ -1,5 +1,10 @@
 @use "sass:list";
 
+$titlebutton_backdrop: transparent;
+$titlebutton_normal: transparent;
+$backdrop_base_color: transparent;
+$backdrop_bg_color: transparent;
+
 .unset {
   all: unset;
 }
@@ -44,6 +49,9 @@
     .m-#{$i} {
       margin: $len;
     }
+    .mt-#{$i} {
+      margin-top: $len;
+    }
     .w-#{$i} {
       min-width: $len;
     }
@@ -60,25 +68,25 @@ $corner_names: top-left, top-right, bottom-right, bottom-left;
   $corner: list.nth($corners, $i);
   $corner_name: list.nth($corner_names, $i);
   .rounded-#{$corner} {
-    border-#{$corner_name}-radius: var(--window-radius);
+    border-#{$corner_name}-radius: 12px;
   }
 }
 
 @for $i from 0 through 100/5 {
   $alpha: 5 * $i;
-  $bg: rgb(0 0 0 / #{calc(1% * $alpha)});
+  $bg: rgb(30 30 46 / #{calc(1% * $alpha)});
   .bg-#{$alpha} {
     background-color: $bg;
   }
   .hover-bg-#{$alpha}:hover {
-    background-image: image(#{alpha }(currentColor, 0.15));
+    background-color: #403956;
   }
   .hover-bg-#{$alpha}:active {
-    background-image: image(#{alpha }(currentColor, 0.3));
+    background-color: #CBA6F7;
   }
 }
 
-$variants: view, card, accent, destructive, success, warning, error;
+$variants: view, /*card,*/ accent, destructive, success, warning, error;
 
 @each $variant in $variants {
   $fg: var(--#{$variant}-fg-color);
@@ -89,10 +97,10 @@ $variants: view, card, accent, destructive, success, warning, error;
     border-color: var(--border-color);
   }
   .#{$variant}-bg:hover {
-    background-image: image(#{alpha }(currentColor, 0.15));
+    background-color: #403956;
   }
   .#{$variant}-bg:active {
-    background-image: image(#{alpha }(currentColor, 0.3));
+    background-color: #CBA6F7;
   }
 }
 
@@ -111,8 +119,10 @@ $variants: view, card, accent, destructive, success, warning, error;
 }
 
 .backdrop {
-  @extend .bg-20;
+  background-color: transparent;
 }
+
+
 
 .hover:hover {
   @extend .hover-bg-20;
@@ -127,5 +137,9 @@ $variants: view, card, accent, destructive, success, warning, error;
 }
 
 .rounded {
-  border-radius: var(--window-radius);
+  border-radius: 12px;
+}
+
+.pill {
+  border-radius: 32px;
 }

@@ -1,13 +1,24 @@
 @use "common.scss";
 
 .bar-bg {
-  @extend .bg-25;
+  background-color: #11111B;
 }
 
 .topbar {
   * {
     @extend .transition;
   }
+}
+
+.appdockitem {
+  transition: all .2s;
+  transform: scale(0.75);
+  margin: -8px;
+}
+
+.appdockitem:hover {
+  transform: scale(1);
+  margin: 0px;
 }
 
 .topbar {
@@ -22,27 +33,27 @@
 .kim-popup-candidate {
   &.kim-popup-candidate-selected {
     // selected candidate box
-    background-image: image(#{alpha }(var(--accent-color), 0.2));
+    border-color: #CBA6F7;
+    border-width: 4px;
+
   }
 }
 
 .notification-popup-item {
-  background-image: image(#{alpha }(var(--window-bg-color), 0.85));
+  border-radius: 12px;
 }
 
 .notification-item-low {
-  outline: solid 1px rgb(202 207 210 / 50%);
-  outline-offset: 0px;
+  border-radius: 12px;
 }
 
 .notification-item-normal {
-  outline: solid 1px rgb(93 173 226 / 50%);
-  outline-offset: 0px;
+  border-radius: 12px;
 }
 
 .notification-item-critical {
-  outline: solid 1px rgb(236 112 99 / 50%);
-  outline-offset: 0px;
+    border-color: #CBA6F7;
+    border-width: 4px;
 }
 
 .osd-caption-scroll {
@@ -56,4 +67,9 @@
 
 .wallpaper.wallpaper-overview {
   @extend .rounded;
+}
+
+.fixed-height {
+  min-height: 80px;
+  padding: 0;
 }

@@ -7,37 +7,33 @@ template $IgnisAppDockView: Box {
         transition-type: slide_up;
 
         CenterBox {
-            width-request: 256;
-
             styles [
-                "bar-bg",
+                "fixed-height"
             ]
-
             [center]
             Box {
                 $CommandPill {
                     tooltip-text: "App Launcher";
-                    click-command: "ignis toggle-window ignis-applauncher";
-
+                    click-command: "walker";
                     child: Image {
-                        icon-name: "view-app-grid-symbolic";
-                        pixel-size: 48;
+                        icon-name: "view-app-grid";
+                        pixel-size: 64;
+                        styles [
+                            "appdockitem",
+                        ]
                     };
-
-                    styles [
-                        "hover",
-                        "m-1",
-                        "p-1",
-                        "rounded",
-                        "unset",
-                    ]
                 }
 
                 FlowBox flow_box {
                     selection-mode: none;
                     min-children-per-line: 100;
                     max-children-per-line: 100;
+                    styles [
+                        "m-0",
+                        "p-0"
+                    ]
                 }
+
             }
         }
     }

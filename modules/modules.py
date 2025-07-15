@@ -253,14 +253,12 @@ class Workspaces(Box):
         if self.__hypr.is_available:
             self.__hypr.send_command(f"dispatch workspace {"r-1" if dx + dy < 0 else "r+1"}")
 
-
 class CommandPill(Gtk.Button):
     __gtype_name__ = "CommandPill"
 
     def __init__(self):
         self._click_cmd: str = ""
         super().__init__()
-
         self.connect("clicked", self.__on_clicked)
 
     def __on_clicked(self, *_):
@@ -614,8 +612,8 @@ class Audio(Box):
             )
             set_on_click(
                 self,
-                left=lambda _: stream.set_is_muted(not stream.is_muted),
-                right=lambda _: wm.toggle_window(WindowName.control_center.value),
+                right=lambda _: stream.set_is_muted(not stream.is_muted),
+                left=lambda _: wm.toggle_window(WindowName.control_center.value),
             )
 
     def __init__(self):
@@ -656,7 +654,7 @@ class Network(Box):
             wifi.connect("notify::is-connected", self.__on_change)
             self.__on_change()
             set_on_click(
-                self, left=self.__on_clicked, right=lambda _: wm.toggle_window(WindowName.control_center.value)
+                self, right=self.__on_clicked, left=lambda _: wm.toggle_window(WindowName.control_center.value)
             )
 
         def __on_change(self, *_):
@@ -783,8 +781,7 @@ class Clock(Gtk.Box):
     def __on_change(self, poll: Poll):
         now = datetime.datetime.now()
 
-        self.label.set_label(now.strftime("%H:%M"))
-        self.label.set_tooltip_text(now.strftime("%Y-%m-%d"))
+        self.label.set_label(now.strftime("%d/%m/%Y %I:%M %p"))
 
         poll.set_timeout(60 * 1000 - math.floor(now.second * 1000 + now.microsecond / 1000))
 
