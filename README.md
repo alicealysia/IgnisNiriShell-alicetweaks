@@ -2,26 +2,35 @@
 
 Requirements:
 
-- One of the compositors:
+- One of the compositors of all time:
   - [YaLTeR/niri](https://github.com/yalter/niri), a scrollable-tiling _Wayland_ compositor.
-  - [hyprwm/Hyprland](https://hyprland.org), an independent, highly customizable, dynamic tiling _Wayland_ compositor.
 - [ignis-sh/ignis](https://github.com/ignis-sh/ignis), a widget framework for building desktop shells.
   - Currently the latest main branch should be installed.
+> Note: this is only compatible with the git version, as the stable version lacks the features needed for this to work properly!!!
+
 - [Blueprint](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/), a markup language for _GTK_ user interfaces.
 - [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/), building blocks for modern _GNOME_ applications.
 - [Tela icon theme](https://github.com/vinceliuice/Tela-icon-theme), a flat colorful design icon theme.
   - Without _tela_ installed, some icons might be missing.
+ 
+## Install:
+
+`git clone https://github.com/alicealysia/IgnisNiriShell-alicetweaks ~/.config/ignis`
+
+## Run via:
+
+`ignis init`
 
 ## Screenshots
 
 <details>
-<summary>Screenshots (light theme)</summary>
+<summary>Screenshots</summary>
+a quick overview
+<img width="3436" height="1438" alt="image" src="https://github.com/user-attachments/assets/b7bd29d4-26d4-4ff3-9725-131d778052aa" />
+plank style taskbar
+<img width="334" height="81" alt="image" src="https://github.com/user-attachments/assets/12319fc0-358a-4ad6-aea2-31d6d51f1489" />
 
-![ignis-shell-appdock.png](https://i.postimg.cc/FH2n6QH4/ignis-shell-appdock.png)
-![ignis-shell-applauncher.png](https://i.postimg.cc/15CHLKXr/ignis-shell-applauncher.png)
-![ignis-shell-controlcenter.png](https://i.postimg.cc/TYL0vDb8/ignis-shell-controlcenter.png)
-![ignis-shell-preferences.png](https://i.postimg.cc/mDpW55zW/ignis-shell-preferences.png)
-![ignis-shell-overview.png](https://i.postimg.cc/GpKYr2xM/ignis-shell-overview.png)
+everything else is quite similar to lost-melodies config
 
 </details>
 
